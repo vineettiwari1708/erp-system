@@ -1,56 +1,83 @@
-backend/
+frontend/
 │
 ├── src/
-│   │
-│   ├── config/
-│   │   ├── db.js                # PostgreSQL connection
-│   │   ├── env.js              # environment variables
-│   │
-│   ├── controllers/
-│   │   ├── auth.controller.js
-│   │   ├── user.controller.js
-│   │   ├── invoice.controller.js
-│   │   ├── payment.controller.js
-│   │   ├── adjustment.controller.js
-│   │   ├── admin.controller.js
-│   │
-│   ├── services/
-│   │   ├── auth.service.js
-│   │   ├── user.service.js
-│   │   ├── invoice.service.js
-│   │   ├── payment.service.js
-│   │   ├── balance.service.js
-│   │
+│
+│   ├── api/
+│   │   ├── axios.js          # base API instance
+│   │   ├── auth.api.js
+│   │   ├── user.api.js
+│   │   ├── invoice.api.js
+│   │   ├── payment.api.js
+│   │   ├── admin.api.js
+│
+│   ├── app/
+│   │   ├── store.js          # Redux/Zustand store
+│   │   ├── slices/
+│   │       ├── auth.slice.js
+│   │       ├── user.slice.js
+│   │       ├── invoice.slice.js
+│   │       ├── payment.slice.js
+│
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── Table.jsx
+│   │   │   ├── Modal.jsx
+│   │   │
+│   │   ├── charts/
+│   │   │   ├── BalanceChart.jsx
+│   │   │
+│   │   ├── forms/
+│   │       ├── LoginForm.jsx
+│   │       ├── InvoiceForm.jsx
+│   │       ├── PaymentForm.jsx
+│
+│   ├── pages/
+│   │   ├── auth/
+│   │   │   ├── Login.jsx
+│   │   │
+│   │   ├── admin/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Users.jsx
+│   │   │   ├── Approvals.jsx
+│   │   │   ├── Ledger.jsx
+│   │   │
+│   │   ├── manager/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── CreateInvoice.jsx
+│   │   │   ├── Invoices.jsx
+│   │   │
+│   │   ├── user/
+│   │       ├── Dashboard.jsx
+│   │       ├── MyInvoices.jsx
+│   │       ├── Payments.jsx
+│   │       ├── Balance.jsx
+│
+│   ├── layouts/
+│   │   ├── AdminLayout.jsx
+│   │   ├── ManagerLayout.jsx
+│   │   ├── UserLayout.jsx
+│
 │   ├── routes/
-│   │   ├── auth.routes.js
-│   │   ├── user.routes.js
-│   │   ├── invoice.routes.js
-│   │   ├── payment.routes.js
-│   │   ├── admin.routes.js
-│   │
-│   ├── middleware/
-│   │   ├── auth.middleware.js   # JWT verification
-│   │   ├── role.middleware.js   # admin/manager/user access
-│   │   ├── error.middleware.js
-│   │
-│   ├── models/ (optional if using ORM)
-│   │   ├── user.model.js
-│   │   ├── invoice.model.js
-│   │   ├── payment.model.js
-│   │
+│   │   ├── AppRoutes.jsx
+│   │   ├── ProtectedRoute.jsx
+│
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   ├── useBalance.js
+│
 │   ├── utils/
-│   │   ├── response.js
-│   │   ├── logger.js
-│   │   ├── helpers.js
-│   │
-│   ├── validations/
-│   │   ├── auth.validation.js
-│   │   ├── invoice.validation.js
-│   │   ├── payment.validation.js
-│   │
-│   ├── app.js                  # express app setup
-│   ├── server.js              # entry point
+│   │   ├── formatDate.js
+│   │   ├── calculateBalance.js
+│
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── icons/
+│
+│   ├── App.jsx
+│   ├── main.jsx
 │
 ├── .env
 ├── package.json
-└── README.md
+└── vite.config.js
