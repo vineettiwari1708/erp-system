@@ -1,0 +1,84 @@
+<mxfile host="app.diagrams.net" modified="2026-04-23T00:00:00.000Z" agent="ChatGPT" version="24.7.8">
+  <diagram name="PERN Finance System Workflow">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ADMIN -->
+        <mxCell id="admin" value="ADMIN&#10;(Full Control + Role Management)" style="rounded=1;fillColor=#ffcccc;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="450" y="40" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MANAGER -->
+        <mxCell id="manager" value="MANAGER&#10;(All Permissions except DELETE)" style="rounded=1;fillColor=#cce5ff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="180" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ACCOUNT -->
+        <mxCell id="account" value="ACCOUNT&#10;(Finance Operations)" style="rounded=1;fillColor=#d5f5e3;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="450" y="180" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- CLIENT -->
+        <mxCell id="client" value="CLIENT&#10;(End User)" style="rounded=1;fillColor=#f9e79f;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="700" y="180" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- INVOICE FLOW -->
+        <mxCell id="invoice" value="INVOICE CREATION&#10;Account/Manager → Admin Approval → Ledger DEBIT" style="rounded=1;fillColor=#f5cba7;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="320" width="300" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- PAYMENT FLOW -->
+        <mxCell id="payment" value="PAYMENT FLOW&#10;Client → Request → Admin Approval → CREDIT Entry" style="rounded=1;fillColor=#aed6f1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="550" y="320" width="300" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- LEDGER -->
+        <mxCell id="ledger" value="LEDGER SYSTEM&#10;(Single Source of Truth)" style="rounded=1;fillColor=#d7dbdd;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="380" y="470" width="300" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- BALANCE -->
+        <mxCell id="balance" value="BALANCE&#10;Credits - Debits (Dynamic Calculation)" style="rounded=1;fillColor=#fadbd8;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="380" y="600" width="300" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- EDGES -->
+        <mxCell id="e1" style="endArrow=block;strokeWidth=2;" edge="1" parent="1" source="admin" target="manager">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" style="endArrow=block;strokeWidth=2;" edge="1" parent="1" source="admin" target="account">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" style="endArrow=block;strokeWidth=2;" edge="1" parent="1" source="admin" target="client">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" style="endArrow=block;strokeWidth=2;" edge="1" parent="1" source="account" target="invoice">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" style="endArrow=block;strokeWidth=2;" edge="1" parent="1" source="client" target="payment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" style="endArrow=block;strokeWidth=2;" edge="1" parent="1" source="invoice" target="ledger">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e7" style="endArrow=block;strokeWidth=2;" edge="1" parent="1" source="payment" target="ledger">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e8" style="endArrow=block;strokeWidth=2;" edge="1" parent="1" source="ledger" target="balance">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
