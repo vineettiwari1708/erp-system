@@ -214,3 +214,24 @@ export const analytics = {
   pendingInvoices: 1,
   pendingPayments: 1
 };
+
+
+🧠 HOW TO USE THIS IN FRONTEND
+📌 Example (React)
+import { users, invoices, payments } from "../data/dummy_data";
+
+console.log(users);
+console.log(invoices);
+🔄 EASY BACKEND MIGRATION LATER
+
+When backend is ready, just replace:
+
+dummy_data.js  →  API calls (axios/fetch)
+
+Example:
+
+// before
+import { invoices } from "./dummy_data";
+
+// after
+const res = await axios.get("/api/invoices");
